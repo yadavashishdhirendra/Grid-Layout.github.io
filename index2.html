@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Tutorial Part-2</title>
+    <style>
+        @font-face {
+            font-family: Romantic_Dates;
+            src: url('./RomanticDates.ttf');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 0;
+            font-family: 'Romantic_Dates';
+            letter-spacing: 0.03em;
+            line-height: 1.6195;
+        }
+
+        body{
+            background-color: #80808024;
+        }
+
+        .wrapper {
+            display: grid;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            /* repeat 1fr then 2fr 3 times */
+            /* grid-template-columns: repeat(3, 1fr 2fr); */
+            /* repeat 1fr 3times */
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1em;
+            /* this will give the height to cols */
+            /* grid-auto-rows: 150px; */
+            /* this gonna give auto height and 150px when the content is too long */
+            grid-auto-rows: minmax(150px, auto);
+            padding: 20px 10px 20px 10px;
+        }
+
+        .wrapper>div {
+            background-color: #423f8d;
+            color: white;
+            padding: 1em;
+        }
+
+        .wrapper>div:nth-child(odd) {
+            background-color: #1C3052;
+            padding: 1em;
+        }
+
+        /* Nested grid */
+        .nested {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1em;
+        }
+
+        .nested>div {
+            background-color: #423f8d;
+            border: #fff 1px solid;
+            padding: 1em;
+        }
+
+        .nested>div:nth-child(odd){
+            background-color: #1C3052;
+        }
+
+        @media screen and (max-width: 640px) {
+            .wrapper {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .nested {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusantium nesciunt deserunt obcaecati
+                quibusdam. Voluptas ab minima expedita magnam harum.</p>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusantium nesciunt deserunt obcaecati
+                quibusdam. Voluptas ab minima expedita magnam harum. Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Aliquam facere maiores dicta minus deleniti quas dolorum dolores esse reiciendis! Qui.</p>
+        </div>
+        <div class="nested">
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusantium nesciunt deserunt obcaecati
+                quibusdam. Voluptas ab minima expedita magnam harum.</p>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusantium nesciunt deserunt obcaecati
+                quibusdam. Voluptas ab minima expedita magnam harum.</p>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusantium nesciunt deserunt obcaecati
+                quibusdam. Voluptas ab minima expedita magnam harum.</p>
+        </div>
+    </div>
+</body>
+
+</html>
